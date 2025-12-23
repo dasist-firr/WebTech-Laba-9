@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #ff6;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Звёздное поле */
+/* Чёрный космос со звёздным полем (без внешних изображений) */
+.starfield {
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.starfield::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(#fff 1px, transparent 0),
+        radial-gradient(#fff 2px, transparent 0),
+        radial-gradient(#fff 1.5px, transparent 0);
+    background-size: 50px 50px, 100px 100px, 70px 70px;
+    background-position:
+        0 0,
+        25px 25px,
+        15px 15px;
+    animation: twinkle 5s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.6; }
+    25% { opacity: 1; }
+    50% { opacity: 0.7; }
+    75% { opacity: 0.9; }
+    100% { opacity: 0.6; }
+}
+
+
+/* Открытие в стиле Star Wars */
+#opening-crawl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+#titles {
+    position: absolute;
+    width: 18em;
+    height: 50em;
+    bottom: 0;
+    left: 50%;
+    margin-left: -9em;
+    font-size: 350%;
+    font-weight: bold;
+    text-align: justify;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(300px) rotateX(25deg);
+    color: #ff6;
+    font-family: 'Arial', sans-serif;
+}
+
+#titles:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 60%;
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+#titlecontent {
+    position: absolute;
+    top: 100%;
+    animation: scroll 90s linear 4s forwards;
+}
+
+@keyframes scroll {
+    0% { top: 100%; }
+    100% { top: -170%; }
+}
+
+/* Заголовок и навигация */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 2px solid #ff6;
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    color: #ff6;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px #ff6;
+    margin-bottom: 0.5rem;
+    font-family: 'Arial Black', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s, text-shadow 0.3s;
+    text-shadow: 0 0 5px rgba(255, 255, 102, 0.3);
+}
+
+nav a:hover {
+    color: #ff6;
+    text-shadow: 0 0 10px #ff6;
+}
+
+/* Основное содержимое */
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 102, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+h2 {
+    color: #ff6;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 5px #ff6;
+    font-size: 1.8rem;
+}
+
+p, ul, form {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}
+
+strong {
+    color: #ff6;
+}
+
+/* Форма */
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ff6;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ff6;
+    color: #ff6;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 0 10px rgba(255, 255, 102, 0.2);
+    transition: box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 255, 102, 0.4);
+}
+
+form button {
+    background: linear-gradient(to bottom, #ff6, #cc5);
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 10px rgba(255, 255, 102, 0.3);
+}
+
+form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 102, 0.6);
+}
+
+/* Футер */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #666;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    border-top: 1px dashed #333;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    main {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    #titles {
+        font-size: 250%;
+        width: 16em;
+        margin-left: -8em;
+    }
+
+    form button {
+        width: 100%;
+    }
+}
+
+/* Анимация текста в перспективе — убираем после окончания */
+#opening-crawl.fade-out {
+    animation: fadeOut 2s forwards;
+    animation-delay: 95s;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; pointer-events: none; }
+}
+/* Галерея планет */
+.planet-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+}
+
+.planet-card {
+    background: rgba(20, 20, 30, 0.7);
+    border: 1px solid #444;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 102, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #ccc;
+}
+
+.planet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 255, 102, 0.4);
+    border-color: #ff6;
+}
+
+.planet-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid #ff6;
+}
+
+.planet-card h3 {
+    color: #ff6;
+    margin: 1rem 0.8rem 0.5rem;
+    font-size: 1.3rem;
+    text-shadow: 0 0 5px #ff6;
+}
+
+.planet-card p {
+    margin: 0 0.8rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+/* Адаптивность для планет */
+@media (max-width: 600px) {
+    .planet-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .planet-card h3 {
+        font-size: 1.2rem;
+    }
+}

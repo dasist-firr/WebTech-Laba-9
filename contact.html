@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Связь — Звёздные войны</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="starfield">
+    <header>
+        <h1>Звёздные войны</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О вселенной</a></li>
+                <li><a href="characters.html">Персонажи</a></li>
+                <li><a href="galaxy.html">Галактика</a></li>
+                <li><a href="contact.html">Связь</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Свяжитесь с Альянсом</h2>
+            <form id="contact-form">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="planet">Планета:</label>
+                <input type="text" id="planet" name="planet" required>
+
+                <label for="message">Сообщение (шифром):</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Отправить через гиперпространство</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Звёздные войны. Вселенная принадлежит Lucasfilm Ltd.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
