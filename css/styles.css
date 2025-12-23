@@ -18,7 +18,6 @@ body {
 .starfield {
     background-color: #000;
     position: relative;
-    overflow: hidden;
 }
 
 .starfield::before {
@@ -337,3 +336,4 @@ footer {
         font-size: 1.2rem;
     }
 }
+
