@@ -11,6 +11,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    overflow-y: auto;
+	scroll-behavior: smooth;
 }
 
 /* Звёздное поле */
@@ -18,6 +20,8 @@ body {
 .starfield {
     background-color: #000;
     position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .starfield::before {
@@ -336,4 +340,5 @@ footer {
         font-size: 1.2rem;
     }
 }
+
 
