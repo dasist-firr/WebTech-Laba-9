@@ -11,7 +11,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
-    overflow-y: auto;
+	overflow-y: auto;
 	scroll-behavior: smooth;
 }
 
@@ -20,7 +20,7 @@ body {
 .starfield {
     background-color: #000;
     position: relative;
-    overflow-x: hidden;
+	overflow-x: hidden;
     overflow-y: auto;
 }
 
@@ -340,5 +340,3 @@ footer {
         font-size: 1.2rem;
     }
 }
-
-
